@@ -1,0 +1,108 @@
+/*
+ * File name: basic.css
+ * Styles for mobile devices
+ * Theme: Fluid
+*/
+body {font-family:  Arial, Helvetica, sans-serif;font-size: 100%;margin:0px auto;background-color:#999;}
+@media screen and (max-width:480px){
+    body{background-image:none !important;}
+}
+.wrapper {width: auto;margin:0 auto;padding:0 10px;float:none; clear:both;min-width:300px;max-width: 960px;}
+.main{background-color:white;}
+.navWrapper { background-color:transparent;border-radius: 0px 0px 7px 7px; float:none;display:block;width:auto;}
+.ch-container {margin:0; padding:10px;}
+footer {border-top:1px dotted #000;}
+footer .wrapper {position:relative;}
+.vipImageWrapper,
+.vipWrapper{float:none;display:block;width:auto;}
+.main aside.ch-g1-4 {display:none}
+.main .mainContent {float:none;display:block;width:auto;}
+#searchWrap.searchWrapper{width:100%;padding:0;text-align:center;}
+.cartWrapper {width:auto; position:absolute; top:0px;left:0;}
+.dataEbit { float: right; padding: 10px; margin-top: -50px;}
+div.wrapper.clearfix div.ch-g1-2{
+	width: 100%;
+}
+
+.component.simpleMenuDrop.ch-dropdown p {
+  top: 10px;
+  right: 10px;
+  background: #e74f58;
+  border: 0;
+}
+
+#contact-btn,
+a.ch-btn.ch-primary {
+  background: #e74f58;
+  border: 0;
+}
+
+@media (max-width:640px)
+{
+  .navWrapper {
+    height: 45px;
+  }
+  
+  .content-list img {
+		max-width: 100%;
+	}
+
+  #searchWrap.searchWrapper {
+    padding: 0 !important;
+  }
+  
+  #searchWrap .component.searchBar #searchForm .inputField {
+    width: 60% !important;
+  }
+
+  #searchWrap .component.searchBar input {
+    width: auto;
+    padding: 0 25px;
+    vertical-align: top;
+  }
+
+  .img-responsive {
+    max-width: 100%;
+  }
+
+  .banner-right {
+    margin-top: 20px;
+  }
+
+  .component.itemGallery article {
+    padding-top: 120px !important;
+  }
+  
+  .ch-g1-4, .ch-g2-8 {
+    width: 100%;
+  }
+  
+  .addCart {
+    margin-bottom: 10px !important;
+  }
+  
+  #contactBtn {
+    width: 262px !important;
+    padding: 0px 18px !important;
+  }
+  
+  .ui-resizable {
+    width: 100% !important;
+  }
+  
+  .component.categoriesList {
+    display:block !important;
+    border-bottom: 1px solid #b2b2b2;
+    padding-bottom: 20px;
+    text-align:center;
+  }
+  
+  .component.categoriesList h3 {
+    margin: 0 0 10px !important;
+  }
+  
+  .component.categoriesList ul {
+    margin: 0;
+  }
+  
+}

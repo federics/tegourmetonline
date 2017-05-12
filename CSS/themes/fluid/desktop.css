@@ -1,0 +1,33 @@
+/*
+ * File name: desktop.css
+ * Styles for desktop and large resolutions
+ * Theme: Fluid
+*/
+body {font-size: 90%;background-position:center top;padding: 0;}
+header {position:relative;}
+.navWrapper{float:right;display:inline;width:auto;float:right;display:inline;background:white;}
+.vipImageWrapper, 
+.vipWrapper {float:left;display:block;}
+.vipImageWrapper {width:50%}
+.vipWrapper {width:50%}
+.logoWrapper .ch-container {padding:0;}
+.main aside.ch-g1-4,
+.main .mainContent {display:block;float:left;}
+.main aside.ch-g1-4{width:25%;}
+.main .mainContent {width:75%;}
+#searchWrap.searchWrapper, 
+.cartWrapper {float:left;display:block;}
+#searchWrap.searchWrapper {width:80%;padding:0;text-align:left;}
+.cartWrapper {width:20%;position:static;}
+
+.component.img-logo img {
+  max-width: 32% !important;
+}
+
+.box-content-list {
+  max-width: 65%;
+}
+
+.banner-right {
+  max-width: 32%;
+}

@@ -1,0 +1,196 @@
+<!-- main content, que cambia en otras paginas de este tema -->
+<div class="ch-g1 main">
+	<div class="wrapper" role="main">
+		<div class="slider-home" style="text-align:center">
+		<!-- INICIO PLACAS DESTACADAS HOME -->
+		#if($showContent)
+		<div class="box-content-list ch-g1">
+			#if($showContentImage)
+			<div class="ch-carousel" data-max-items="1">
+				<ul class="content-list">
+					#foreach ($contentImage in $contentImageList)
+					<li style="height: $contentImageMaxHeight">
+						<article class="component article clearfix">
+							<figure>
+								<span>
+									#if($contentImage.hasLink)
+									<a href="$contentImage.link" rel="nofollow" target="_blank">
+									#end
+										<img src="$contentImage.src" alt="$contentImage.alt">
+									#if($contentImage.hasLink)
+									</a>
+									#end
+								</span>
+							</figure>
+						</article>
+					</li>
+					#end
+				</ul>
+			</div>
+			#elseif ($showContentText)
+			<div>$contentText</div>
+			#end
+		</div>
+		#end
+		<!-- FIN PLACAS DESTACADAS HOME-->		
+		<img src="../IMAGES/slider-b.jpg?dl=0" alt="registro de comercios" class="banner-right img-responsive" style="margin-bottom:16px" /></a>
+		<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="//tegourmetonline.us14.list-manage.com/subscribe/post?u=7e7d8bbc8fded45f1de9af5f1&amp;id=cf484d8418" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL"></label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7e7d8bbc8fded45f1de9af5f1_cf484d8418" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+	</div>
+	<div class="clearfix" style="height:55px"></div>
+	<!-- INICIO SIDEBAR -->
+	<aside class="ch-g1-4">
+		<div class="ch-container column leftCol clearfix">
+			<!-- INICIO CATEGORIAS -->
+			<nav class="component categoriesList">
+				<h3 class="title-component">Categorías</h3>
+				<ul>
+					#foreach ( $categoryLevel1 in $level1CategoryList )
+					<li>
+						<a class="link link-categ" href="$categoryLevel1.url" title="$categoryLevel1.name">$categoryLevel1.name</a>
+						#if ($categoryLevel1.hasSubCategories)
+						<ul>
+							#foreach ( $categoryLevel2 in $level2CategoryList )
+							<li>
+								<a class="link link-categ" href="$categoryLevel2.url" title="$categoryLevel2.name">$categoryLevel2.name</a>
+							</li>
+							#end
+						</ul>
+						#end
+					</li>
+					#end
+				</ul>
+			</nav>
+			<!-- FIN CATEGORIAS -->
+
+			<!--#if(("AR" != "VE") && ($!show_mp_methods))
+			<div class="component promoMP payMethod clearfix">
+				<span id="promo-block" class="promo-block"></span>
+				<p class="pay-safe">Compra seguro:</p>  
+				<h4>Cuotas sin interés</h4>
+				<ul class="banks clearfix">
+					<li><span class="hipotecario">Banco Hipotecario</span></li>
+					<li><span class="icbc">Banco ICBC</span></li>
+					<li><span class="macro">Banco Macro</span></li>
+					<li><span class="tshopping">Banco Itaú</span></li>
+				</ul>
+				<p class="more">
+					<a class="promosOFF" href="http://www.mercadopago.com/org-img/argentina/promociones-bancos.html" target="_blank" rel="nofollow">Más información</a>
+				</p>
+			</div>
+			#end-->
+		</div>
+	</aside>
+	<div class="ch-g3-4 mainContent">
+		<div class="ch-container column rightCol clearfix">
+			<nav class="component itemGallery clearfix">
+				<ul class="item-gallery">
+					#foreach ($galleryItem in $galleryItemList)
+					<li class="background">
+						<article class="clearfix">
+							<h2>
+								<a href="$galleryItem.url" title="$galleryItem.title" class="title">$galleryItem.title</a>
+							</h2>
+							<ul class="itemData clearfix">
+								<li>
+									<figure class="background">
+										<!--<div class="new-badge">Nuevo!</div>-->
+										<a class="link" title="$galleryItem.title" href="$galleryItem.url">
+											<img class="" alt="$galleryItem.title" title="$galleryItem.title"     src="$galleryItem.imageUrl" />
+											#if( $galleryItem.showLastAvailable )
+											<span class="lastProd last-AR">Últimos Disponibles</span>
+											#end
+										</a>
+										#if($galleryItem.hasPromotion)
+											#if($galleryItem.promotion.isDiscountTypePrice)
+											<p class="promoRibbonHome">
+												<span>$galleryItem.promotion.discountPercent</span>&#37;
+												<strong>OFF</strong>
+											</p>
+											#elseif ($galleryItem.promotion.isDiscountTypeQuantity && "AR" != "BR")
+											<p class="promoRibbonHome">
+												<strong class="promoQtyBuy">$galleryItem.promotion.quantityTake<span class="promoQtyBuyX">x</span>$galleryItem.promotion.quantityBuy</strong>
+											</p>
+											#end
+										#end
+									</figure>
+								</li>
+								#set ($galleryPromotion = $galleryItem.promotion)
+								<a href="$galleryItem.url" class="btn-action">Lo llevo!</a>
+								<dl id="homePrice">
+									#if ($galleryItem.hasPriceWithDiscount())
+									<del class="ch-price price">
+									#end
+									<dd>
+										#if( $RegionalConfig.useDecimals($country) ) 
+										<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">
+											$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId")
+											$galleryItem.getSplitPrice()[0]
+											<span class="decimal">,</span>
+											<sup>$galleryItem.getSplitPrice()[1]</sup>
+										</span>
+										#else
+										<span class="#if (!$galleryItem.hasPriceWithDiscount())ch-price#end price">
+											$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId")
+											$galleryItem.getSplitPrice()[0]
+										</span>
+										#end
+									</dd>
+									#if ($galleryItem.hasPriceWithDiscount())</del>#end
+									#if ($galleryItem.hasPriceWithDiscount())
+										#if ($galleryItem.hasPriceWithDiscount())<ins>#end 
+										<dd>
+											#if( $RegionalConfig.useDecimals($country))
+											<span class="ch-price price">
+												$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId")
+												$galleryItem.getSplitPriceWithDiscount()[0]
+												<span class="decimal">,</span>
+												<sup>$galleryItem.getSplitPriceWithDiscount()[1]</sup>
+											</span>
+											#else
+											<span class="ch-price price">
+												$CurrencyHelper.getCurrencySymbol("$shop.locale.country", "$galleryItem.currencyId")
+												$galleryItem.getSplitPriceWithDiscount()[0]
+											</span>
+											#end
+										</dd>
+										#if ($galleryItem.hasPriceWithDiscount())</ins>#end 
+									#end
+								</dl>
+							
+								#if($galleryItem.hasPromotion && $galleryItem.promotion.isDiscountTypeQuantity && "AR" == "BR")
+								<p class="promoTagMlb">
+									Lleve $galleryItem.promotion.quantityTake pague $galleryItem.promotion.quantityBuy
+								</p>
+								#end
+							</ul>
+						</article>
+						
+						#if($galleryItem.promotion.freeShipping || $galleryItem.freeShipping)
+						<div class="promotionFreeShippingSmall">Env&iacute;o gratis</div>
+						#end
+					</li>
+					#end
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<footer class="ch-g1 background">
+	<div class="wrapper">
+	  <div class="ch-g1-3">
+	    <div class="ch-container">
+	      <a href="http://qr.afip.gob.ar/?qr=ZEuX2QbsEh5R5EUoj6-j7g,," target="_F960AFIPInfo">
+		      <img src="http://www.afip.gob.ar/images/f960/DATAWEB.jpg" style="width:40px; margin-bottom:10px" />
+		    </a>
+	      <p style="display:none"><br>ROCIO LAPLACETTE<br>
+	      CUIT: 27-22200338-0</p>
+			</div>
+	  </div>
+		<div class="ch-g1-3">
+			<div class="ch-container" align="center" style="padding-top:30px">
+				<g:plusone size="medium" count="false" href="http://www.tegourmetonline.com.ar"></g:plusone>
+				<span id="fb-button"></span>
+			</div>
+		</div>
+		<div class="ch-g1-3">
+			<div class="ch-container" style="text-align:right; padding-top:20px">
+ 				<a href="http://www.mercadoshops.com.ar" title="MercadoShops" style="color:#fff; font-weight:bold">Mercado Shop</a><br>
+ 				<a class="link" href="http://www.mydesign.com.ar" title="Diseño Web"><img src="../IMAGES/logo-mydesign.png" alt="MyDesign" style="vertical-align:top; max-width:100%" /></a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script type="text/javascript">
+window.onload=function(){
+
+  loc = $(location).attr('href');
+  $('.navWrapper .simpleMenu a').filter(function () {
+    return this.href == loc;
+  }).closest('li').addClass('active');
+  
+  if(window.location.pathname != '/') {
+    var li = $('.navWrapper .simpleMenu a[href^="/' + location.pathname.split("/")[1] + '"]');
+  }
+  else {
+    var li = $('.navWrapper .simpleMenu a:first');
+  }
+  
+  li.parent().addClass('active');
+  
+  //btn 'lo llevo'
+  var items = $('.searchResults ol li');
+  $.each(items, function(index){
+  	 var href = $(this).find('figure a').attr('href');
+  	 var btn = $('<a href="'+ href +'" class="btn-action">Lo llevo!</a>');
+  	 $(this).find('.itemPrice').before(btn);
+  });
+  
+};
+</script>
+
